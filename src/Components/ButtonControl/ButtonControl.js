@@ -1,5 +1,7 @@
 import React from 'react';
 import './ButtonControl.scss';
+import { connect } from 'react-redux';
+import { resetCount, decreaseCount, increaseCount } from '../../redux/reducers/countReducer';
 
 class ButtonControl extends React.Component {
     constructor(props) {
@@ -16,13 +18,12 @@ class ButtonControl extends React.Component {
     handleSubmit(e) {
         const { numAmount } = this.state;
         
-
         if (e.target.name === 'decrease') {
-            
+            this.props.decreaseCount(numAmount)
         } else if (e.target.name === 'increase') {
-            
+            this.props.increaseCount(numAmount)
         } else {
-            
+            this.props.resetCount();
         }
     }
     render() {
@@ -56,4 +57,8 @@ class ButtonControl extends React.Component {
     }
 }
 
-export default ButtonControl;
+export default connect(null, {
+    resetCount,
+    increaseCount,
+    decreaseCount
+})(ButtonControl);
