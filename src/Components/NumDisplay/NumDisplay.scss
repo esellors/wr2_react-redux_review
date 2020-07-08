@@ -1,0 +1,19 @@
+.num-display {
+    max-width: 600px;
+    width: 50vw;
+    min-width: 400px;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid gray;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    backdrop-filter: blur(10px);
+    
+    h1 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+}
